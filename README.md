@@ -13,3 +13,7 @@ Then:
 and
 
     docker compose up
+
+after that you should be able to visit:
+
+    http://localhost:$DOCKER_PORT
