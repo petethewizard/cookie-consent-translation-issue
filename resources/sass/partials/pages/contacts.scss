@@ -1,0 +1,12 @@
+.contacts-page {
+    h1 {
+        @apply pb-2 border-b border-b-4 border-brand text-2xl xl:text-3xl;
+    }
+
+    .separator {
+        @apply absolute left-0 right-0 mx-auto bg-brand opacity-40;
+        width: 1px;
+        height: 362px;
+        top: 50px;
+    }
+}

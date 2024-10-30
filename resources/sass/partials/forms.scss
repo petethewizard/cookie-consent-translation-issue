@@ -1,0 +1,130 @@
+.field {
+    @apply mt-4 mb-1 relative;
+
+    .input-wrapper {
+        @apply block p-2 border border-brand rounded-md w-full focus:outline-1 outline-brand;
+
+        &.r-full {
+            @apply rounded-full;
+        }
+    }
+
+    label {
+        @apply block;
+    }
+
+    input,
+    textarea {
+        @apply outline-none text-xl w-full p-0 m-0 placeholder-brand font-light;
+    }
+
+    &.type-appointment {
+        @apply mt-7;
+
+        input,
+        textarea {
+            width: calc(100% - 35px);
+
+            @apply px-3;
+        }
+    }
+
+    textarea {
+        @apply min-h-32;
+    }
+
+    .icon {
+        @apply absolute right-3 top-2 h-6;
+    }
+}
+
+form {
+    .primary-button {
+        @apply mt-4;
+    }
+
+    #where {
+        @apply max-w-96 -mb-3;
+
+        .where {
+            @apply align-top cursor-pointer;
+
+            span {
+                @apply inline-block;
+                pointer-events: none;
+            }
+
+            .checkbox {
+                @apply h-5 w-5 rounded-full bg-white border-2 border-white outline outline-2 outline-brand;
+            }
+
+            &.active {
+                .checkbox {
+                    @apply bg-brand;
+                }
+            }
+
+            .where-text {
+                line-height: 21px;
+                margin-left: 6px;
+                vertical-align: top;
+            }
+        }
+    }
+
+    .time {
+        position: relative;
+        padding: 18px 0;
+        text-align: center;
+        border-radius: 15px;
+        cursor: pointer;
+        height: 68px;
+        line-height: 34px;
+
+        .line {
+            display: none;
+            position: absolute;
+            left: calc(50% - 35px);
+            top: 33px;
+            width: 71px;
+            height: 1px;
+            transform: rotate(-70deg);
+
+            @apply bg-brand;
+        }
+
+        &.active {
+            @apply bg-brand text-white;
+        }
+
+        &.taken {
+            opacity: 50%;
+            cursor: default;
+
+            .line {
+                display: block;
+            }
+        }
+    }
+
+    .loader {
+        display: inline-block;
+        width: 120px;
+        font-weight: bold;
+        font-family: sans-serif;
+        font-size: 30px;
+        padding: 0 5px 8px 0;
+        background: repeating-linear-gradient(
+                90deg,
+                currentColor 0 8%,
+                #0000 0 10%
+            )
+            200% 100%/200% 3px no-repeat;
+        animation: l3 2s steps(6) infinite;
+    }
+    @keyframes l3 {
+        to {
+            background-position: 80% 100%;
+        }
+    }
+}

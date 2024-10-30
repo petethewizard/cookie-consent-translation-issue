@@ -1,0 +1,282 @@
+header {
+    @apply py-3;
+
+    #logo {
+        display: inline-block;
+        vertical-align: top;
+        height: 40px;
+    }
+
+    .divider {
+        display: inline-block;
+        vertical-align: top;
+        height: 39px;
+        width: 1px;
+        margin-left: 14px;
+
+        @apply bg-brand mr-4;
+    }
+
+    #next-to-logo {
+        display: inline-block;
+        vertical-align: top;
+        height: 40px;
+    }
+
+    #desktop-nav {
+        .desktop-link {
+            @apply inline-block relative overflow-visible;
+
+            &.active {
+                @apply bg-brand text-white rounded;
+
+                .arrow-down {
+                    border-top-color: white;
+                }
+
+                .dropdown {
+                    @apply pr-0;
+                }
+            }
+
+            .dropdown {
+                z-index: 60;
+                display: none;
+                position: absolute;
+                right: 0;
+                top: 100%;
+                width: 358px;
+                background: white;
+                
+                @apply pl-3 pr-3 rounded-l rounded-br;
+
+                a {
+                    padding: 2px 0;
+                    display: block;
+
+                    .circle {
+                        display: none;
+                        vertical-align: top;
+                        margin-top: 9px;
+                        width: 7px;
+                        height: 7px;
+                        border: 2px solid $brand;
+                        background: white;
+                        border-radius: 100%;
+                        margin-right: 2px;
+                    }
+
+                    &:hover {
+                        .circle {
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                .dropdown {
+                    display: block;
+
+                    a {
+                        @apply text-brand;
+                    }
+                }
+            }
+
+            .arrow-down {
+                display: inline-block;
+                margin-left: -10px;
+                vertical-align: middle;
+                
+                @apply mr-3;
+            }
+
+            > a {
+                @apply px-3 pb-1 inline-block;
+                padding-top: 5px;
+            }
+        }
+    }
+
+    #hamburger-wrapper {
+        @apply fixed bottom-2 right-2 p-1 pr-2 w-8 h-6 bg-brand z-40 cursor-pointer;
+        text-align: center;
+        padding: 7px;
+        border-radius: 3px;
+        height: 21px;
+
+        #hamburger {
+            > div {
+                @apply h-1 w-8 bg-white rounded-full;
+                margin-bottom: 5px;
+
+                &:nth-child(2) {
+                    height: 3px;
+                }
+            }
+        }
+    }
+}
+
+#mobile-nav {
+    @apply opacity-0 z-50 fixed left-0 w-full bg-white py-8 bg-brand;
+
+    &.active {
+        @apply opacity-100;
+    }
+
+    .links-wrapper {
+        @apply px-20;
+
+        .inner-wrapper {
+            display: flex;
+            flex-direction: column;
+
+            .mobile-nav-link {
+                position: relative;
+                margin: 5px 0;
+                padding: 3px 0;
+                text-align: center;
+
+                .skewed {
+                    position: absolute;
+                    transform: skew(36deg, 0deg);
+                    left: -15px;
+                    width: calc(100% + 30px);
+                    border: 1px dotted white;
+                    height: 100%;
+                }
+
+                .left-skewed {
+                    position: absolute;
+                    left: -58px;
+                    bottom: calc(100% - 4px);
+                    width: 8px;
+                    height: 85px;
+                    transform: skew(36deg, 0deg);
+                    border-left: 1px dotted white;
+                    border-right: 1px dotted white;
+                    border-bottom: 1px solid $brand;
+                    background: $brand;
+                    z-index: 20;
+                }
+
+                .right-skewed {
+                    position: absolute;
+                    right: -58px;
+                    top: calc(100% + 2px);
+                    width: 5px;
+                    height: 85px;
+                    transform: skew(36deg, 0deg);
+                    border-left: 1px dotted white;
+                    border-right: 1px dotted white;
+                    border-top: 1px solid $brand;
+                    background: $brand;
+                    z-index: 20;
+                }
+
+                &.active {
+                    .skewed {
+                        background: white;
+                    }
+
+                    .left-skewed {
+                        border-bottom: 1px solid white;
+                        background: white;
+                    }
+
+                    .right-skewed {
+                        border-top: 1px solid white;
+                        background: white;
+                    }
+
+                    a {
+                        @apply text-brand rounded-lg;
+                    }
+                }
+
+                > a {
+                    @apply block px-3 py-1 text-center inline-block text-white font-bold relative;
+                    z-index: 25;
+                    height: 25px;
+                }
+            }
+        }
+    }
+
+    #select-language {
+        padding: 10px 0;
+        font-size: 0;
+        text-align: center;
+        margin-top: 20px;
+
+        a {
+            float: none;
+            display: inline-block;
+            border: 1px solid white;
+
+            @apply text-lg leading-8 bg-brand text-white;
+
+            &.language-de {
+                @apply border-l rounded-l;
+
+                &.de {
+                    @apply bg-white text-brand;
+                }
+            }
+
+            &.language-en {
+                @apply border-r rounded-r;
+
+                &.en {
+                    @apply bg-white text-brand;
+                }
+            }
+        }
+    }
+
+    #mobile-close {
+        @apply fixed hidden text-center rounded-sm text-4xl font-bold bg-white px-1 py-0 cursor-pointer;
+        z-index: 30;
+        bottom: 40px;
+        right: 35px;
+        line-height: 36px;
+        vertical-align: top;
+        padding-bottom: 2px;
+    }
+
+    &.active {
+        #mobile-close {
+            @apply block;
+        }
+    }
+}
+
+.android {
+    &.chrome {
+        .left-skewed {
+            left: -57.25px !important;
+            width: 7.75px !important;
+        }
+
+        // .right-skewed {
+        //     right: -58.25px !important;
+        // }
+    }
+}
+
+.ios {
+    &.safari,
+    &.chrome {
+        .left-skewed {
+            left: -57.5px !important;
+            width: 7.75px !important;
+        }
+
+        .right-skewed {
+            width: 4.75px !important;
+            right: -57.5px !important;
+        }
+    }
+}

@@ -1,0 +1,116 @@
+h1 {
+    @apply text-4xl font-bold;
+}
+
+h2 {
+    @apply text-2xl font-bold;
+}
+
+h3 {
+    @apply text-lg font-bold mb-2;
+}
+
+.arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid $brand;
+}
+
+.arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid $brand;
+}
+
+.arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    
+    border-top: 8px solid $brand;
+}
+
+ul {
+    @apply list-disc mb-3;
+
+    li {
+        margin-left: 20px;
+    }
+}
+
+.primary-button,
+.reset-btn button {
+    @apply inline-block bg-brand py-2 px-12 rounded-lg text-white cursor-pointer;
+}
+
+p {
+    @apply mb-3;
+}
+
+.error-flash {
+    @apply bg-red-800 outline-red-800;
+}
+
+.success-flash {
+    @apply bg-brand outline-brand;
+}
+
+
+.dots-container {
+    @apply block lg:hidden col-span-2 sm:col-span-3;
+}
+
+.dots-wrapper {
+    .dots-container {
+        @apply lg:block col-span-1 sm:col-span-1;
+    }
+
+    .knowhow-dots-right {
+        .dots-middle {
+            margin-top: -18px;
+            margin-left: 29px;
+            overflow: visible;
+        }
+    }
+}
+
+.dot {
+    @apply bg-brand;
+
+    display: inline-block;
+    width: 3px;
+    height: 1px;
+    margin: 0 1px;
+}
+
+.dots {
+    font-size: 0;
+}
+
+.dots-left {
+    position: absolute;
+    top: 35px;
+    left: -56px;
+    transform: rotate(-45deg);
+    text-wrap: nowrap;
+}
+
+.dots-middle {
+    width: 100%;
+    text-wrap: nowrap;
+    overflow: hidden;
+    margin-top: -20px;
+}
+
+.dots-right {
+    position: absolute;
+    bottom: 41px;
+    right: -35px;
+    transform: rotate(-45deg);
+    text-wrap: nowrap;
+}

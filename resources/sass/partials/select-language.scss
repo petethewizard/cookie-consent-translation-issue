@@ -1,0 +1,26 @@
+#select-language {
+    @apply inline-block;
+    vertical-align: top;
+    padding: 0 0 5px 10px;
+
+    a {
+        @apply block w-8 h-8 float-left font-bold text-brand text-center  border-y border-brand;
+        line-height: 31px;
+
+        &.language-de {
+            @apply border-l rounded-l;
+
+            &.de {
+                @apply bg-brand text-white;
+            }
+        }
+
+        &.language-en {
+            @apply border-r rounded-r;
+
+            &.en {
+                @apply bg-brand text-white;
+            }
+        }
+    }
+}

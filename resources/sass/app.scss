@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "partials/variables";
+@import "partials/fonts";
+@import "partials/custom";
+@import "partials/common";
+@import "partials/header";
+
+// pages
+@import "partials/pages/homepage";
+@import "partials/pages/contacts";
+
+// components
+@import "partials/select-language";
+@import "partials/forms";
+@import "partials/cookies-consent";
+
+// general
+body {
+    @apply text-brand;
+
+    font-family: "Swiss", sans-serif;
+}

@@ -1,0 +1,51 @@
+.homepage {
+    background-image: url(../assets/images/homepage/chips-3.jpg);
+    background-size: 350px 350px;
+    background-position: top right;
+    background-repeat: no-repeat;
+    margin-bottom: 65px;
+
+    @media (min-width: $lg) {
+        background-size: 600px 600px;
+    }
+
+    #hamburger-wrapper {
+        bottom: 16px !important;
+    }
+
+    main {
+        h1 {
+            @apply mt-12 mb-2;
+            
+            max-width: 1200px;
+
+            @media (min-width: 768px) {
+                line-height: 48px;
+            }
+        }
+
+        h2 {
+            @apply mb-8 md:mb-24;
+        }
+
+        .column {
+            > h2 {
+                @apply my-2 text-xl text-left;
+            }
+
+            .mobile {
+                h2 {
+                    @apply m-0;
+                }
+            }
+
+            h3 {
+                @apply text-sm;
+            }
+
+            p {
+                @apply text-sm text-left;
+            }
+        }
+    }
+}

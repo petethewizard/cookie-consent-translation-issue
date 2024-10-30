@@ -1,0 +1,1 @@
+@include('components.mobile-nav-link', ['name' => 'contacts', 'text' => __('text.header.nav.contacts')])

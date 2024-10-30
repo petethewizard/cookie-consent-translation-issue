@@ -1,0 +1,1 @@
+<a class="primary-button" href="{{ $link }}" @if(isset($target))target="{{ $target }}"@endif>{{ $text }}</a>
